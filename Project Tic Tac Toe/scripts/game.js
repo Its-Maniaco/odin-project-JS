@@ -15,7 +15,10 @@ function playerMove (Board, Player) {
 
 const gameBoard = newBoard()
 
-gameBoard.playerChoice(0,0,'X')
-gameBoard.playerChoice(2,0,'O')
-gameBoard.playerChoice(1,2,'X')
+gameBoard.attemptPlay(0,0,'X')
+gameBoard.attemptPlay(2,0,'O')
+gameBoard.attemptPlay(0,1,'X')
+gameBoard.attemptPlay(2,2,'O')
+gameBoard.attemptPlay(0,2,'X')
+gameBoard.attemptPlay(1,1,'O')
 display(gameBoard)
