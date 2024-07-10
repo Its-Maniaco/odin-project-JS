@@ -1,5 +1,7 @@
 const { exit } = require("process");
 const readline = require("readline");
+
+
 function Board () {
     this.grid = Array(3).fill(null).map( () => Array(3).fill(null) );
     
@@ -11,12 +13,13 @@ function Board () {
         this.grid[row][col] = choice;
         if (this.winCheck(choice)) {
             console.log(`${choice} WINS!!!`)
-            exit
+            process.exit()
         }
        } 
        else {
             console.error("Invalid move");
        }
+       display(this);
     }
 
     // TODO: Optimize? keep a move count for tie?
@@ -69,4 +72,10 @@ function Players (playerA, playerB) {
     return [new Player(playerA, 'X'), new Player(playerB, 'O')]
 }
 
+// display the board with marks
+function display(Board) {
+    Board.grid.forEach((element) => console.log(element));
+}
+
 module.exports = {newBoard, Players};
+
