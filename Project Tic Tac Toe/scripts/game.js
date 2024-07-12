@@ -1,6 +1,5 @@
 // logic to play
-const readline = require("readline");
-const {newBoard, Player, Players} = require("./gamePieces");
+import {newBoard, Player, Players} from "./gamePieces";
 
 const gameBoard = newBoard()
 

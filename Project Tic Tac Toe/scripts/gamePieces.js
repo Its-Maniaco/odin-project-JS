@@ -1,7 +1,3 @@
-const { exit } = require("process");
-const readline = require("readline");
-
-
 function Board () {
     this.grid = Array(3).fill(null).map( () => Array(3).fill(null) );
     
@@ -13,7 +9,8 @@ function Board () {
         this.grid[row][col] = choice;
         if (this.winCheck(choice)) {
             console.log(`${choice} WINS!!!`)
-            process.exit()
+            //process.exit()
+            
         }
        } 
        else {
@@ -57,7 +54,7 @@ function Board () {
 }
 
 // return new instance of empty Board
-function newBoard () {
+export function newBoard () {
     return new Board()
 }
 
@@ -68,7 +65,7 @@ function Player (name, choice) {
 
 
 // create 2 Player
-function Players (playerA, playerB) {
+export function Players (playerA, playerB) {
     return [new Player(playerA, 'X'), new Player(playerB, 'O')]
 }
 
@@ -77,5 +74,4 @@ function display(Board) {
     Board.grid.forEach((element) => console.log(element));
 }
 
-module.exports = {newBoard, Players};
 

@@ -49,3 +49,10 @@ footer {
     position: absolute;
     bottom: 10px;
 }
+
+.alert {
+    color: red;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    visibility: hidden;
+}
