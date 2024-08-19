@@ -1,7 +1,6 @@
 import { Players } from "./gamePieces.js";
 
 document.getElementById("startButton").addEventListener("click", function () {
-    alert("Biutton presede")
     // get player names
     const player1Name = document.getElementById("player1").value;
     const player2Name = document.getElementById("player2").value;
@@ -14,12 +13,14 @@ document.getElementById("startButton").addEventListener("click", function () {
        console.log(`Player 2: ${playerB.name} has piece ${playerB.choice}`)
        
        // we want these names to be available later too so we can make them global
-        window.Players = [playerA, playerB]
+        //window.Players = [playerA, playerB]
 
         // no alert if nothing wrong
         alertMessage.style.visibility = "hidden";
 
         // start game
+        //redirect to game page with parameters for name passed
+        location.href = `../html/game.html?playerA=${encodeURIComponent(playerA.name)}&playerB=${encodeURIComponent(playerB.name)}` 
     } else {
         console.log("Player name not entered.")
         alertMessage.textContent = 'Please enter names for both players.';
